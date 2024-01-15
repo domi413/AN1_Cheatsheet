@@ -1,0 +1,144 @@
+% Document
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.6cm]{geometry}
+\usepackage{multicol}
+\usepackage{hyperref}
+
+% Math
+\usepackage{amsmath}
+
+% Configuration
+\pagestyle{empty} % To remove page enumeration
+\renewcommand{\baselinestretch}{0.9}
+
+\hypersetup{
+	pdftitle={AN1-Cheatsheet},
+	pdfauthor={Dominik},
+	pdfsubject={AN1},
+}
+
+\begin{document}
+\begin{multicols}{2}
+	
+\section*{Produktregel}
+
+\(
+f(x) = u(x) \cdot v(x) \\
+f'(x) = u'(x) \cdot v(x) + u(x) \cdot v'(x)
+\)
+
+\section*{Quotientenregel}
+
+\(
+f(x) = \dfrac{g(x)}{h(x)} \\
+f'(x) = \dfrac{h(x) \cdot g'(x) - h'(x) \cdot g(x)}{h(x)^2}
+\)
+
+\section*{Kettenregel}
+
+\(
+f(x) = u(v(x)) \\
+f'(x) = u'(v(x)) \cdot v'(x)
+\)
+
+\section*{Stetigkeit beweisen}
+
+\begin{minipage}{0.4\textwidth}
+	Wenn zwei Funktionen, die in unterschiedlichen Bereichen definiert sind, an einem bestimmten Punkt stetig sein sollen, kann man diese Gleichsetzen. \\
+	
+	Für eine Funktion \( f(x) \), die definiert ist als:
+	\[
+	f(x) = 
+	\begin{cases} 
+		g(x) & \text{für } x < c \\
+		h(x) & \text{für } x > c 
+	\end{cases}
+	\]
+	wobei \( c \) der Punkt ist, an dem die Funktion stetig sein soll, muss gelten:
+	\[
+	\lim_{{x \to c^-}} g(x) = \lim_{{x \to c^+}} h(x)
+	\]
+\end{minipage}
+
+\section*{Linearisierung}
+
+Linearisierung beim Punkt p:
+
+\( \\
+f(x) = g(x) \\
+r(x) = f(x) - g(x) \\
+r'(x) \text{ berechnen} \\
+x1 = p - \dfrac{r(p)}{r'(p)}
+\)
+
+\section*{Extremalstellen}
+
+\(
+f(x) \\
+f'(x) \text{ berechnen} \\
+f'(x) = 0 \ \rightarrow \ \text{z.B. } \dfrac{3x^2-3}{1+x^2} = 0 \\
+\rightarrow \text{Kritische Punkte} \\
+\text{(Der Nenner muss nur berücksichtigt} \\
+\text{werden,wenn er 0 werden kann)} \\\\
+f''(x) \text{ berechnen} \\\\
+\text{Kritische Punkte p1, p2 einsetzen:} \\
+f''(p1) > 0 \ \rightarrow \text{lokales Minimum} \\
+f''(p2) < 0 \ \rightarrow \text{lokales Maximum}
+\)
+
+\section*{Ableitungen}
+
+\begin{tabular}{l|l}
+	\textbf{Funktion} & \textbf{Ableitungsfunktion} \\
+	\hline
+	\( x \mapsto x^a \) & \( x \mapsto a \cdot x^{a-1} \) \\
+	\( x \mapsto 1 \) & \( x \mapsto 0 \) \\
+	\( x \mapsto x \) & \( x \mapsto 1 \) \\
+	\( x \mapsto x^2 \) & \( x \mapsto 2x \) \\
+	\( x \mapsto \frac{1}{x} \) & \( x \mapsto -\frac{1}{x^2} \) \\
+	\( x \mapsto \sqrt{x} \) & \( x \mapsto \frac{1}{2\sqrt{x}} \) \\
+	\( x \mapsto e^x \) & \( x \mapsto e^x \) \\
+	\( x \mapsto a^x \) & \( x \mapsto \ln(a) \cdot a^x \) \\
+	\( x \mapsto \ln(x) \) & \( x \mapsto \frac{1}{x} \) \\
+	\( x \mapsto \log_b(x) \) & \( x \mapsto \frac{1}{\ln(b) \cdot x} \) \\
+	\( x \mapsto \sin(x) \) & \( x \mapsto \cos(x) \) \\
+	\( x \mapsto \cos(x) \) & \( x \mapsto -\sin(x) \) \\
+	\( x \mapsto \tan(x) \) & \( x \mapsto \frac{1}{\cos^2(x)} \) \\
+	\( x \mapsto \tan(x) \) & \( x \mapsto 1 + \tan^2(x) \) \\
+	\( x \mapsto \arcsin(x) \) & \( x \mapsto \frac{1}{\sqrt{1-x^2}} \) \\
+	\( x \mapsto \arccos(x) \) & \( x \mapsto -\frac{1}{\sqrt{1-x^2}} \) \\
+	\( x \mapsto \arctan(x) \) & \( x \mapsto \frac{1}{1+x^2} \) \\
+\end{tabular}
+
+\section*{Potenzgesetze}
+
+\begin{flalign*}
+	a^n a^m &= a^{n+m} \\
+	\frac{a^n}{a^m} &= a^{n-m} \\
+	a^n b^n &= (ab)^n \\
+	\frac{a^n}{b^n} &= \left(\frac{a}{b}\right)^n \\
+	a^{n \cdot m} &= (a^n)^m \\
+	a^{-n} &= \frac{1}{a^n} \\
+	a^0 &= 1 \\
+	a^1 &= a
+\end{flalign*}
+
+\section*{Logarithmusgesetze}
+
+\begin{align*}
+	a^{\log_a(x)} &= x \\
+	\log_a (x \cdot y) &= \log_a (x) + \log_a (y) \\
+	\log_a \left( \frac{x}{y} \right) &= \log_a (x) - \log_a (y) \\
+	\log_a (x^b) &= b \cdot \log_a (x)
+\end{align*}
+
+\section*{Sinus, Kosinus, Tangens}
+
+\begin{align*}
+	\tan(x) &= \frac{\sin(x)}{\cos(x)} \\
+	1 &= \cos^2(x) + \sin^2(x)
+\end{align*}
+
+\end{multicols}
+\end{document}
